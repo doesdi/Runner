@@ -11,6 +11,7 @@ public class Jump : MonoBehaviour
     public bool ReadyJump;
     public bool ReadyGround;
     public int ForceJump;
+    public Animator animator;
 
     public int score;
     public Text scoreT;
@@ -25,6 +26,7 @@ public class Jump : MonoBehaviour
         if (ReadyJump && ReadyGround)
         {
             rb.AddForce(new Vector2(0, ForceJump));
+            animator.SetBool("Ja", true);
             ReadyJump = false;
             ReadyGround = false;
         }
@@ -40,6 +42,7 @@ public class Jump : MonoBehaviour
         if(collision.gameObject.tag == "Ground")
         {
             ReadyGround = true;
+            animator.SetBool("Ja", false);
         }
         else
         {

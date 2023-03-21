@@ -10,9 +10,6 @@ public class MoveEnemy : MonoBehaviour
     void Update()
     {
         transform.Translate(dir * speed, Space.World);
-        if(gameObject.transform.position.x < -15)
-        {
-            Destroy(gameObject);
-        }
+        
     }
 }

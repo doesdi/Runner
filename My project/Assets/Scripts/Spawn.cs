@@ -20,7 +20,9 @@ public class Spawn : MonoBehaviour
     IEnumerator SpawnEnemy()
     {
         yield return new WaitForSeconds(time);
-        Instantiate(Enemy, SpawnPos.position, Quaternion.identity);
+        var newObj = (GameObject) Instantiate(Enemy, SpawnPos.position, Quaternion.identity);     
+        Destroy(newObj, time+20);
+           
         Repeat();
     }
 }
