@@ -37,7 +37,7 @@ public class Jump : MonoBehaviour
         ReadyJump = true;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Ground")
         {
@@ -50,7 +50,7 @@ public class Jump : MonoBehaviour
         }
         if (collision.gameObject.tag == "Enemy")
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(2);
         }
         if (collision.gameObject.tag == "Score")
         {

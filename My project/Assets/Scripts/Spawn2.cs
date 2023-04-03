@@ -21,7 +21,7 @@ public class Spawn2 : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         var newObj = (GameObject)Instantiate(Enemy, SpawnPos.position, Quaternion.identity);
-        Destroy(newObj, time + 40);
+        Destroy(newObj, time + 100);
 
         Repeat();
     }
